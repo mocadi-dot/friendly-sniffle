@@ -1,0 +1,660 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="website portfolio" />
+    <meta name="keywords" content="webdev" />
+    <meta name="author" content="freehtml5.co" />
+	
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="apple-touch-icon" href="C:\Users\mrich\Desktop\profile-master\profile-master\images\apple-touch-icon.png">
+	<link rel="icon" href="C:\Users\mrich\Desktop\profile-master\profile-master\images\favicon-32x32.png">
+	<link rel="icon" href="C:\Users\mrich\Desktop\profile-master\profile-master\images\favicon-16x16.png">
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.6.6/css-doodle.min.js"></script>
+    <style>
+        #toggle-night-mode {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: #f0f0f0; /* Couleur de fond */
+                cursor: pointer; /* Style de curseur pour indiquer qu'il est cliquable */
+                z-index: 1000; /* Assurez-vous qu'il apparaît au-dessus d'autres éléments */
+            }
+  /* Your custom styles */
+  css-doodle {
+    --color: @p(#51eaea, #fffde1, #ff9d76, #FB3569);
+    --rule: (
+      :doodle {
+        @grid: 30x1 / 18vmin;
+        --deg: @p(-180deg, 180deg);
+      }
+      :container {
+        perspective: 30vmin;
+      }
+      :after, :before {
+        content: '';
+        background: var(--color); 
+        @place-cell: @r(100%) @r(100%);
+        @size: @r(6px);
+        @shape: heart;
+      }
+
+      @place-cell: center;
+      @size: 100%;
+
+      box-shadow: @m2(0 0 50px var(--color));
+      background: @m100(
+        radial-gradient(var(--color) 50%, transparent 0) 
+        @r(-20%, 120%) @r(-20%, 100%) / 1px 1px
+        no-repeat
+      );
+
+      will-change: transform, opacity;
+      animation: scale-up 12s linear infinite;
+      animation-delay: calc(-12s / @I * @i);
+
+      @keyframes scale-up {
+        0%, 95.01%, 100% {
+          transform: translateZ(0) rotate(0);
+          opacity: 0;
+        }
+        10% { 
+          opacity: 1; 
+        }
+        95% {
+          transform: 
+            translateZ(35vmin) rotateZ(@var(--deg));
+        }
+      }
+    )
+  }
+</style>
+    </head>
+    <body>
+		
+		<button id="toggle-night-mode">Mode nuit</button>
+		<div class="sparkle" id="sparkle-container"></div>
+
+		<div class="fh5co-loader"></div>
+        <div id="page">
+        <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="display-t js-fullheight">
+                            <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
+                                <div class="profile-thumb" style="background: url(images/user-3.png);"></div>
+                                <h1><span>Monica Richaume</span></h1>
+                                <h2><span>Web developer and competitive intelligence analyst</span></h2>
+                                <h2><span>Geneva, Switzerland</span></h2>
+                                <p>
+                                    <ul class="fh5co-social-icons">
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/mrichaume/" target="_blank">
+                                                <i class="icon-linkedin2"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://github.com/mocadi-dot" target="_blank">
+                                                <i class="icon-github2"></i>
+                                            </a>
+                                        </li>
+										<li>
+										<a href="https://buymeacoffee.com/mocadidot" target="_blank">
+											<svg style="width: 32px; height: 28px; fill: white;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+											  <title>Buy Me A Coffee</title>
+											  <path d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.197-.069-.42-.098-.57-.241-.152-.143-.196-.366-.231-.572-.065-.378-.125-.756-.192-1.133-.057-.325-.102-.69-.25-.987-.195-.4-.597-.634-.996-.788a5.723 5.723 0 00-.626-.194c-1-.263-2.05-.36-3.077-.416a25.834 25.834 0 00-3.7.062c-.915.083-1.88.184-2.75.5-.318.116-.646.256-.888.501-.297.302-.393.77-.177 1.146.154.267.415.456.692.58.36.162.737.284 1.123.366 1.075.238 2.189.331 3.287.37 1.218.05 2.437.01 3.65-.118.299-.033.598-.073.896-.119.352-.054.578-.513.474-.834-.124-.383-.457-.531-.834-.473-.466.074-.96.108-1.382.146-1.177.08-2.358.082-3.536.006a22.228 22.228 0 01-1.157-.107c-.086-.01-.18-.025-.258-.036-.243-.036-.484-.08-.724-.13-.111-.027-.111-.185 0-.212h.005c.277-.06.557-.108.838-.147h.002c.131-.009.263-.032.394-.048a25.076 25.076 0 013.426-.12c.674.019 1.347.067 2.017.144l.228.031c.267.04.533.088.798.145.392.085.895.113 1.07.542.055.137.08.288.111.431l.319 1.484a.237.237 0 01-.199.284h-.003c-.037.006-.075.01-.112.015a36.704 36.704 0 01-4.743.295 37.059 37.059 0 01-4.699-.304c-.14-.017-.293-.042-.417-.06-.326-.048-.649-.108-.973-.161-.393-.065-.768-.032-1.123.161-.29.16-.527.404-.675.701-.154.316-.199.66-.267 1-.069.34-.176.707-.135 1.056.087.753.613 1.365 1.37 1.502a39.69 39.69 0 0011.343.376.483.483 0 01.535.53l-.071.697-1.018 9.907c-.041.41-.047.832-.125 1.237-.122.637-.553 1.028-1.182 1.171-.577.131-1.165.2-1.756.205-.656.004-1.31-.025-1.966-.022-.699.004-1.556-.06-2.095-.58-.475-.458-.54-1.174-.605-1.793l-.731-7.013-.322-3.094c-.037-.351-.286-.695-.678-.678-.336.015-.718.3-.678.679l.228 2.185.949 9.112c.147 1.344 1.174 2.068 2.446 2.272.742.12 1.503.144 2.257.156.966.016 1.942.053 2.892-.122 1.408-.258 2.465-1.198 2.616-2.657.34-3.332.683-6.663 1.024-9.995l.215-2.087a.484.484 0 01.39-.426c.402-.078.787-.212 1.074-.518.455-.488.546-1.124.385-1.766zm-1.478.772c-.145.137-.363.201-.578.233-2.416.359-4.866.54-7.308.46-1.748-.06-3.477-.254-5.207-.498-.17-.024-.353-.055-.47-.18-.22-.236-.111-.71-.054-.995.052-.26"/>
+											</svg>
+										  </a>
+										  	  
+                                        </li>
+										<li>
+											<!-- Telegram Icon with link -->
+											<a href="https://t.me/mocadidot" target="_blank">
+												<img width="28" height="28" src="https://img.icons8.com/ios-filled/50/FFFFFF/telegram-app.png" alt="telegram-app"/>
+											</a>
+										</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+</html>
+
+
+	<div id="fh5co-about" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2></h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					
+				</div>
+				<div class="col-md-8">
+					<h2>Hello!</h2>
+					<p>I'm a trailblazing woman armed with a Master's degree in competitive intelligence and strategic communication, fueled by an unwavering passion for digital marketing. With an enchanting skill set in Web development, I'm a full-stack developer who wields the magical powers of Ruby on Rails, Javascript, and Python.
+
+					</p><p>	My mission? To take startups and SMEs on an exhilarating journey to online success through high-performing websites and captivating communication strategies.
+						
+					</p><p>	But wait, there's more! In my heartfelt quest to make a difference, I dedicate a part of my time crafting software for children and teens with learning difficulties and unique abilities like DYS or ADHD/ASD. My approach is all about simplicity and innovation, transforming their challenges into triumphs with solutions to make their lives a bit brighter.
+						</p>
+					<p>You might've heard whispers about my bubbly and creative nature, and I won't deny it! But here's the secret sauce: it's my intuition and attention to detail that lets me see the bigger picture. Think of me as a problem-solving sorceress, conjuring up out-of-the-box solutions that dazzle and delight.
+						
+						Oh, did I mention my love for the tech that keeps things ticking? You bet! I've got a soft spot for management and organization software. I believe the right tech can work wonders in streamlining processes and boosting productivity to infinity and beyond!
+						
+					</p><p>	My philosophy is simple: every project is a unique adventure, and I'm here to make it a tale of triumph! With personalized strategies and bespoke solutions, I promise to take your dreams and turn them into an awe-inspiring reality.
+						
+						If you seek an expert who's passionate, creative, and laser-focused on results, let's weave some magic together! Don't hesitate to reach out and let's embark on an exhilarating journey to success!</p>
+					<p>
+				
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-resume" class="fh5co-bg-color">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>My resume</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0">
+					<ul class="timeline">
+						<li class="timeline-heading text-center animate-box">
+							<div><h3>Work experience</h3></div>
+						</li>
+						<li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><img width="50" height="50" src="https://img.icons8.com/ios/50/cat-head--v1.png" alt="cat-head--v1"/></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Computer and media specialist</h3>
+									<span class="company">Flow — the Women's Center : 2023 to present</span>
+								</div>
+								<div class="timeline-body">
+									<p>Elevate Flow's online presence with a touch of creative innovation</p>
+								</div>
+							</div>
+						</li>
+						
+						<li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><img width="50" height="50" src="https://img.icons8.com/ios/50/cat-head--v1.png" alt="cat-head--v1"/></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+								<h3 class="timeline-title">Developer and competitive intelligence analyst</h3>
+									<span class="company">Dataddict : 2016 to present</span>
+								</div>
+								<div class="timeline-body">
+									<p>Competitive intelligence meets digital marketing! A powerful partnership</p>
+								</div>
+							</div>
+						</li>
+						<li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><img width="50" height="50" src="https://img.icons8.com/ios/50/cat-head--v1.png" alt="cat-head--v1"/></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">
+										Marketing and communication assistant</h3>
+									<span class="company">Infomed : 2020 to 2021</span>
+								</div>
+								<div class="timeline-body">
+									<p>Communication? Oh, you loved the visuals I conjured up and the way I wove words with precision to craft flawless user manuals. And that's not all, I had a secret potion to train your staff into an unstoppable force that wowed your clients!
+
+										Marketing, you said? Fear not! With a pinch of magic, I applied bewitching strategies and sprinkled marketing brilliance into the IT department. The results? Spellbinding success!
+										
+										When it came to business analysis, I was your strategic navigator. I mapped out problems effortlessly and presented strategies that left everyone in awe. My powers lay in making complexity disappear with a wave of my wand! </p>
+								</div>
+							</div>
+						</li>
+						<li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><img width="50" height="50" src="https://img.icons8.com/ios/50/cat-head--v1.png" alt="cat-head--v1"/></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Library services manager</h3>
+									<span class="company">City of Geneva : 2016 to 2019</span>
+								</div>
+								<div class="timeline-body">
+									<p>Managing a diverse portfolio of IT projects with finesse.
+										Cataloging and centralizing equipment management.
+										Creating captivating performance indicators that unveiled insights.
+										Enchanting personnel management, fostering a harmonious team.
+										Implementing and skillfully managing a knowledge management system (Wiki) that unlocked the power of collective wisdom.</p>
+								</div>
+							</div>
+						</li>
+						<br>
+						<li class="timeline-heading text-center animate-box">
+							<div><h3>Education</h3></div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge"><img width="50" height="50" src="https://img.icons8.com/stickers/100/wizard.png" alt="wizard"/></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Python software engineer</h3>
+									<span class="company">Nomades Advanced Technologies to 2023</span>
+								</div>
+								<div class="timeline-body">
+									<p>In the enchanting realm of Cognokid, I embarked on a captivating journey with Python as my wand, crafting a learning tool for children with unique learning challenges.
+						
+										Spellbinding character recognition and mesmerizing image generation were the heart of this creation. The magic came to life through the utilization of an API, the enchanting powers of AI, and a wondrous language model that weaved dreams into reality.</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge"><img width="50" height="50" src="https://img.icons8.com/stickers/100/wizard.png" alt="wizard"/></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Ruby on rails and JS full-stack developer</h3>
+									<span class="company">TheHackingProject : 2020</span>
+								</div>
+								<div class="timeline-body">
+									<p>In the mystical land of Staskme, a wondrous team effort came to life as we embarked on a magical web development journey using Ruby on Rails and Javascript. Together, we conjured a responsive website hosted on the enchanting realms of Heroku.
+						
+										My imaginary project, also named Staskme, was more than just a website - it was a beacon of hope and transformation. With a noble mission in mind, we proposed and directed this initiative to provide luxurious concierge services to average families citizens of Geneva.
+										
+										But the enchantment didn't stop there! Our company, driven by a profound sense of solidarity, had a noble purpose of reintegrating long-term unemployed individuals and those distanced from the job market. We waved our benevolent wand, offering them comprehensive training and stable employment with dignified salaries.
+										
+										Staskme is a symbol of magic, where technology and compassion danced hand in hand, creating a world where dreams and opportunities knew no bounds.</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge"><img width="50" height="50" src="https://img.icons8.com/stickers/100/wizard.png" alt="wizard"/></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Master's Degree</h3>
+									<span class="company">IAE Poitiers, France : 2017</span>
+								</div>
+								<div class="timeline-body">
+									<p>Competitive intelligence and strategic communication</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge"><img width="50" height="50" src="https://img.icons8.com/stickers/100/wizard.png" alt="wizard"/></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Bachelor's Degree</h3>
+									<span class="company"> University of Lorraine : 2014</span>
+								</div>
+								<div class="timeline-body">
+									<p>English literature and language</p>
+								</div>
+							</div>
+						</li>
+						
+					
+						
+			    	</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="fh5co-features" class="animate-box">
+		<div class="container">
+			<div class="services-padding">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>My services</h2>
+					</div>
+				</div>
+				<div class="row">
+					
+
+
+				<div class="row">
+					<div class="col-md-4 text-center">
+
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-bargraph"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Web developement</h3>
+								<p>Turn your ideas into reality with a versatile full-stack developer!</p>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-genius"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Data analysis and strategy</h3>
+								<p>Energize your decisions, empowering success!</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-chat"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Communication & marketing</h3>
+								<p>Winning the web game! Unleashing strategies for ambitious startups and SMEs.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-skills" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Skills</h2>
+				</div>
+			</div>
+			<div class="row row-pb-md">
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="95"><span><strong>HTML5</strong>95%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="93"><span><strong>CSS3</strong>93%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="90"><span><strong>PostgreSQL & MySQL</strong>90%</span></div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="89"><span><strong>WordPress</strong>89%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="85"><span><strong>Python</strong>85%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="90"><span><strong>React</strong>70%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="85"><span><strong>Ruby</strong>85%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="90"><span><strong>Javascript</strong>90%</span></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="progress-wrap">
+						<h3><span class="name-left">Front-end development</span><span class="value-right">95%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-1 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Back-end development</span><span class="value-right">90%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-2 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Data analysis</span><span class="value-right">80%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-3 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Project management</span><span class="value-right">85%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-4 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="progress-wrap">
+						<h3><span class="name-left">Positive attitude</span><span class="value-right">100%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-5 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Maintaining Strong Client Relationships</span><span class="value-right">70%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-striped active" role="progressbar"
+						  aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Out of the box thinking</span><span class="value-right">85%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-1 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Problem solving</span><span class="value-right">75%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-3 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-work" class="fh5co-bg-dark">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Work</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-1.jpg);">
+						<div class="desc">
+							<h3>Project name</h3>
+							<span>Global branding and marketing strategy</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-2.png);">
+						<div class="desc">
+							<h3>Lizon</h3>
+							<span>Web developement</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-3.png);">
+						<div class="desc">
+							<h3>Flow —% the women's center</h3>
+							<span>Communication, Marketing and SEO</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-4.png);">
+						<div class="desc">
+							<h3>Cognokid</h3>
+							<span>Software designing and coding</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-5.png);">
+						<div class="desc">
+							<h3>Staskme</h3>
+							<span>Website and project management</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-6.jpg);">
+						<div class="desc">
+							<h3></h3>
+							<span>Illustration</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-7.jpg);">
+						<div class="desc">
+							<h3>Project name</h3>
+							<span>Branding</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-8.jpg);">
+						<div class="desc">
+							<h3>Project name</h3>
+							<span>Illustration</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-blog">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Post on medium</h2>
+					<p>Here you can find some of my articles</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="fh5co-blog animate-box">
+						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-9.jpg);"></a>
+						<div class="blog-text">
+							<span class="posted_on">Mar. 15th 2016</span>
+							<h3><a href="#">Photoshoot On The Street</a></h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<ul class="stuff">
+								<li><i class="icon-heart2"></i>249</li>
+								<li><i class="icon-eye2"></i>308</li>
+								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+							</ul>
+						</div> 
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="fh5co-blog animate-box">
+						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-2.jpg);"></a>
+						<div class="blog-text">
+							<span class="posted_on">Mar. 15th 2016</span>
+							<h3><a href="#">Surfing at Philippines</a></h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<ul class="stuff">
+								<li><i class="icon-heart2"></i>249</li>
+								<li><i class="icon-eye2"></i>308</li>
+								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+							</ul>
+						</div> 
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="fh5co-blog animate-box">
+						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-3.jpg);"></a>
+						<div class="blog-text">
+							<span class="posted_on">Mar. 15th 2016</span>
+							<h3><a href="#">Capture Living On Uderwater</a></h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<ul class="stuff">
+								<li><i class="icon-heart2"></i>249</li>
+								<li><i class="icon-eye2"></i>308</li>
+								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+							</ul>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id="fh5co-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Easy PieChart -->
+	<script src="js/jquery.easypiechart.min.js"></script>
+	
+	
+	<!-- Main -->
+	<script src="js/main.js"></script>
+</div>
+<!--<script>
+	// Code JavaScript ici pour gérer le clic sur le bouton
+	document.getElementById('toggle-night-mode').addEventListener('click', function() {
+		document.body.classList.toggle('night-mode');
+	});
+</script>-->
+</body>
+</html>
+
+
